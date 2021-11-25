@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     title: 'Navigation Basics',
     home: Home(),
   ));
 }
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -32,13 +34,13 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: const Text('Login'),
         backgroundColor: Colors.grey[850],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 8, vertical: 15),
             child: Opacity(
               opacity: 0.5,
@@ -48,7 +50,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: TextField(
               onChanged: (value) {
                 if (value.isEmpty) {
@@ -59,14 +61,14 @@ class _HomeState extends State<Home> {
                   });
                 }
               },
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'E-mail/Usuário',
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: TextField(
               obscureText: true,
               onChanged: (value) {
@@ -78,19 +80,19 @@ class _HomeState extends State<Home> {
                   });
                 }
               },
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'Senha',
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: ElevatedButton(
               onPressed: () {
                 validateCredentials();
               },
-              child: Text('Login'),
+              child: const Text('Login'),
             ),
           ),
         ],
@@ -106,9 +108,10 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bem-vindo!"),
+        title: const Text("Bem-vindo!"),
       ),
-      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      body:
+          Column(mainAxisAlignment: MainAxisAlignment.center, children: const [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 8, vertical: 15),
           child: Opacity(
